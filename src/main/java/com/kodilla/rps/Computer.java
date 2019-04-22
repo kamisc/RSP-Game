@@ -3,7 +3,7 @@ package com.kodilla.rps;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-public class Computer {
+public final class Computer {
     private int computerPoints;
     private Moves move;
 

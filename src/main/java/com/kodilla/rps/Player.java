@@ -2,7 +2,7 @@ package com.kodilla.rps;
 
 import java.util.Scanner;
 
-public final class Player {
+public class Player {
     private String playerName;
     private int playerPoints;
     private Moves move;

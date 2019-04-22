@@ -2,7 +2,7 @@ package com.kodilla.rps;
 
 import java.util.Scanner;
 
-public class EndGame {
+public final class EndGame {
 
     Scanner sc = new Scanner(System.in);
 
