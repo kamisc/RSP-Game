@@ -3,15 +3,21 @@ package com.kodilla.rps;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
-public final class Computer {
+public class Computer {
     private int computerPoints;
     private Moves move;
+    private Random random;
+    private int choice;
+
+    public Computer(Random random){
+        this.random = random;
+    }
 
     public Moves computerMove() throws InterruptedException {
         System.out.println("It's time for me to choose my move!\nGive me 3 seconds... Hmmmm...\n");
         TimeUnit.SECONDS.sleep(3);
-        Random random = new Random();
-        int choice = random.nextInt(3) + 1;
+        choice = random.nextInt(3)+1;
+        //choice = random.nextInt(3) + 1;
         switch (choice){
             case 1:
                 System.out.println("My choice is: " + Moves.values()[choice-1] + "!\n");

@@ -1,10 +1,11 @@
 package com.kodilla.rps;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public final class EndGame {
 
-    Scanner sc = new Scanner(System.in);
+    private Scanner sc = new Scanner(System.in);
 
     public void endGame() throws InterruptedException {
         System.out.println("We finished! Thank you for the game.\n" +
@@ -16,7 +17,7 @@ public final class EndGame {
                 System.exit(0);
                 break;
             case "N":
-                Game game = new Game(new Round(), new Player(), new Computer(), new Rules(), new EndGame());
+                Game game = new Game(new Round(), new Player(), new Computer(new Random()), new Rules(), new EndGame());
                 game.welcome();
                 game.introduceYourself();
                 game.setWinPointsNumbers();

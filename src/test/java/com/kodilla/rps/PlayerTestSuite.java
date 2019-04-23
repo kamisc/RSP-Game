@@ -3,10 +3,7 @@ package com.kodilla.rps;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.Scanner;
-
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 public class PlayerTestSuite {
 
@@ -21,24 +18,44 @@ public class PlayerTestSuite {
     }
 
     @Test
-    public void testPlayerMove(){
+    public void testPlayerMoveRock(){
         //Given
         Player mockPlayerRock = mock(Player.class);
-        Player mockPlayerScissors = mock(Player.class);
-        Player mockPlayerPaper = mock(Player.class);
 
         when(mockPlayerRock.playerMove()).thenReturn(Moves.ROCK);
-        when(mockPlayerScissors.playerMove()).thenReturn(Moves.SCISSORS);
-        when(mockPlayerPaper.playerMove()).thenReturn(Moves.PAPER);
 
         //When
         Moves rock = mockPlayerRock.playerMove();
-        Moves scissors = mockPlayerScissors.playerMove();
-        Moves paper = mockPlayerPaper.playerMove();
 
         //Then
         Assert.assertEquals(Moves.ROCK, rock);
+    }
+
+    @Test
+    public void testPlayerMoveScissors(){
+        //Given
+        Player mockPlayerScissors = mock(Player.class);
+
+        when(mockPlayerScissors.playerMove()).thenReturn(Moves.SCISSORS);
+
+        //When
+        Moves scissors = mockPlayerScissors.playerMove();
+
+        //Then
         Assert.assertEquals(Moves.SCISSORS, scissors);
+    }
+
+    @Test
+    public void testPlayerMovePaper(){
+        //Given
+        Player mockPlayerPaper = mock(Player.class);
+
+        when(mockPlayerPaper.playerMove()).thenReturn(Moves.PAPER);
+
+        //When
+        Moves paper = mockPlayerPaper.playerMove();
+
+        //Then
         Assert.assertEquals(Moves.PAPER, paper);
     }
 

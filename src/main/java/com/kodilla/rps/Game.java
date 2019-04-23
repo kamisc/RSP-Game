@@ -6,7 +6,7 @@ public class Game {
     private int winPointsNumbers;
     private boolean isEnd = false;
 
-    Scanner sc = new Scanner(System.in);
+    private Scanner sc = new Scanner(System.in);
 
     private final Round oneRound;
     private final Player player;

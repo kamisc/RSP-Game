@@ -6,11 +6,12 @@ public class Player {
     private String playerName;
     private int playerPoints;
     private Moves move;
+    private Scanner sc = new Scanner(System.in);
+    private int choice;
 
     public Moves playerMove(){
         System.out.println("Pick your move! 1 - ROCK, 2 - SCISSORS, 3 - PAPER");
-        Scanner sc = new Scanner(System.in);
-        int choice = sc.nextInt();
+        choice = sc.nextInt();
         switch (choice){
             case 1:
                 System.out.println("Your choice is: " + Moves.values()[choice-1] + "!\n");
