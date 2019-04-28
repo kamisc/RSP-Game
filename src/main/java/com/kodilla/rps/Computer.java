@@ -17,7 +17,6 @@ public class Computer {
         System.out.println("It's time for me to choose my move!\nGive me 3 seconds... Hmmmm...\n");
         TimeUnit.SECONDS.sleep(3);
         choice = random.nextInt(3)+1;
-        //choice = random.nextInt(3) + 1;
         switch (choice){
             case 1:
                 System.out.println("My choice is: " + Moves.values()[choice-1] + "!\n");

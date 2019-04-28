@@ -22,11 +22,6 @@ public class Game {
         this.endGame = endGame;
     }
 
-    /*Round oneRound = new Round();
-      Player player = new Player();
-      Computer computer = new Computer();
-      Rules rules = new Rules();*/
-
     public void welcome(){
         System.out.println("Welcome to the Rock-Scissors-Paper Game! Enjoy Yourself!\n\n" +
                 "This is the game for 2 players. One player is you, the other is me - your computer. \n" +
@@ -48,13 +43,22 @@ public class Game {
 
         while(!getEnd()){
             System.out.println("Round #" + (count+1));
-            oneRound.round(player.playerMove(), computer.computerMove(), player, computer);
             count++;
+
+            try{
+                oneRound.round(player.playerMove(), computer.computerMove(), player, computer);
+            } catch (WrongChoice e) {
+                System.out.println(e.getMessage() + " You must pick 1, 2 or 3!\n");
+            }
+
             if(player.getPlayerPoints() == getWinPointsNumbers() || computer.getComputerPoints() == getWinPointsNumbers()){
                 setEnd(true);
                 System.out.println("The game is over!\n");
                 System.out.println("FINAL RESULT: " + player.getPlayerName() + " " + player.getPlayerPoints() + " : " + computer.getComputerPoints() + " Computer");
                 System.out.print("\nAnd the winner is... ");
+
+                // try endgame
+
                 if(player.getPlayerPoints() > computer.getComputerPoints()){
                     System.out.println(player.getPlayerName() + "!!!\n");
                     endGame.endGame();
@@ -78,8 +82,17 @@ public class Game {
         return winPointsNumbers;
     }
 
-    public void setWinPointsNumbers() {
+    public void setWinPointsNumbers() throws WrongChoice {
         System.out.println("Hello, " + player.getPlayerName() + "! How many points do you want to get to finish the game?");
-        this.winPointsNumbers = sc.nextInt();
+
+        try{
+            int number = Integer.parseInt(sc.nextLine());
+            if(number < 1){
+                throw new WrongChoice();
+            }
+            this.winPointsNumbers = number;
+        } catch (NumberFormatException e){
+            throw new WrongChoice();
+        }
     }
 }

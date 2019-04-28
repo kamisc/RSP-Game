@@ -18,7 +18,7 @@ public class PlayerTestSuite {
     }
 
     @Test
-    public void testPlayerMoveRock(){
+    public void testPlayerMoveRock() throws WrongChoice {
         //Given
         Player mockPlayerRock = mock(Player.class);
 
@@ -32,7 +32,7 @@ public class PlayerTestSuite {
     }
 
     @Test
-    public void testPlayerMoveScissors(){
+    public void testPlayerMoveScissors() throws WrongChoice {
         //Given
         Player mockPlayerScissors = mock(Player.class);
 
@@ -46,7 +46,7 @@ public class PlayerTestSuite {
     }
 
     @Test
-    public void testPlayerMovePaper(){
+    public void testPlayerMovePaper() throws WrongChoice {
         //Given
         Player mockPlayerPaper = mock(Player.class);
 

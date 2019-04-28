@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public final class Rules {
 
-    public final void gameRules(){
+    private Scanner sc = new Scanner(System.in);
 
-        Scanner sc = new Scanner(System.in);
+    public final void gameRules(){
 
         System.out.println("If you want to know the rules of the game, press capital Y or press any key if You won't.");
         if(sc.nextLine().equals("Y")){

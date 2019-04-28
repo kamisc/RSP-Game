@@ -1,6 +1,6 @@
 package com.kodilla.rps;
 
-public final class Round {
+public class Round {
     private int playerPoints;
     private int computerPoints;
 

@@ -3,15 +3,24 @@ package com.kodilla.rps;
 import java.util.Scanner;
 
 public class Player {
-    private String playerName;
-    private int playerPoints;
     private Moves move;
     private Scanner sc = new Scanner(System.in);
+    private String playerName;
+    private int playerPoints;
     private int choice;
 
-    public Moves playerMove(){
+    public Moves playerMove() throws WrongChoice {
         System.out.println("Pick your move! 1 - ROCK, 2 - SCISSORS, 3 - PAPER");
-        choice = sc.nextInt();
+
+        try{
+            choice = Integer.parseInt(sc.nextLine());
+            if(choice < 1 || choice > 3) {
+                throw new WrongChoice();
+            }
+        } catch (NumberFormatException e){
+            throw new WrongChoice();
+        }
+
         switch (choice){
             case 1:
                 System.out.println("Your choice is: " + Moves.values()[choice-1] + "!\n");
@@ -21,9 +30,6 @@ public class Player {
                 break;
             case 3:
                 System.out.println("Your choice is: " + Moves.values()[choice-1] + "!\n");
-                break;
-            default:
-                System.out.println("Wrong choice! You must pick 1, 2 or 3!\n");
                 break;
         }
         move = Moves.values()[choice-1];
