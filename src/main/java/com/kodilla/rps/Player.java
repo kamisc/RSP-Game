@@ -10,11 +10,11 @@ public class Player {
     private int choice;
 
     public Moves playerMove() throws WrongChoice {
-        System.out.println("Pick your move! 1 - ROCK, 2 - SCISSORS, 3 - PAPER");
+        System.out.println("Pick your move! 1 - ROCK, 2 - SCISSORS, 3 - PAPER, 4 - LIZARD, 5 - SPOCK");
 
         try{
             choice = Integer.parseInt(sc.nextLine());
-            if(choice < 1 || choice > 3) {
+            if(choice < 1 || choice > 5) {
                 throw new WrongChoice();
             }
         } catch (NumberFormatException e){
@@ -29,6 +29,12 @@ public class Player {
                 System.out.println("Your choice is: " + Moves.values()[choice-1] + "!\n");
                 break;
             case 3:
+                System.out.println("Your choice is: " + Moves.values()[choice-1] + "!\n");
+                break;
+            case 4:
+                System.out.println("Your choice is: " + Moves.values()[choice-1] + "!\n");
+                break;
+            case 5:
                 System.out.println("Your choice is: " + Moves.values()[choice-1] + "!\n");
                 break;
         }

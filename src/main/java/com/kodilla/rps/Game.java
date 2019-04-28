@@ -48,7 +48,7 @@ public class Game {
             try{
                 oneRound.round(player.playerMove(), computer.computerMove(), player, computer);
             } catch (WrongChoice e) {
-                System.out.println(e.getMessage() + " You must pick 1, 2 or 3!\n");
+                System.out.println(e.getMessage() + " You must pick 1, 2, 3, 4 or 5!\n");
             }
 
             if(player.getPlayerPoints() == getWinPointsNumbers() || computer.getComputerPoints() == getWinPointsNumbers()){
