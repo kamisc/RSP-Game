@@ -6,7 +6,7 @@ public class Player {
     private Moves move;
     private Scanner sc = new Scanner(System.in);
     private String playerName;
-    private int playerPoints;
+    private int playerPoints = 0;
     private int choice;
 
     public Moves playerMove() throws WrongChoice {
@@ -23,19 +23,19 @@ public class Player {
 
         switch (choice){
             case 1:
-                System.out.println("Your choice is: " + Moves.values()[choice-1] + "!\n");
+                System.out.println("Your choice is: " + Moves.values()[0] + "!\n");
                 break;
             case 2:
-                System.out.println("Your choice is: " + Moves.values()[choice-1] + "!\n");
+                System.out.println("Your choice is: " + Moves.values()[1] + "!\n");
                 break;
             case 3:
-                System.out.println("Your choice is: " + Moves.values()[choice-1] + "!\n");
+                System.out.println("Your choice is: " + Moves.values()[2] + "!\n");
                 break;
             case 4:
-                System.out.println("Your choice is: " + Moves.values()[choice-1] + "!\n");
+                System.out.println("Your choice is: " + Moves.values()[3] + "!\n");
                 break;
             case 5:
-                System.out.println("Your choice is: " + Moves.values()[choice-1] + "!\n");
+                System.out.println("Your choice is: " + Moves.values()[4] + "!\n");
                 break;
         }
         move = Moves.values()[choice-1];
