@@ -16,25 +16,25 @@ public class Computer {
     public Moves computerMove() throws InterruptedException {
         System.out.println("It's time for me to choose my move!\nGive me 3 seconds... Hmmmm...\n");
         TimeUnit.SECONDS.sleep(3);
-        choice = random.nextInt(5)+1;
+        choice = random.nextInt(Moves.values().length) + 1;
         switch (choice){
+            case 0:
+                System.out.println("My choice is: " + Moves.values()[0] + "!\n");
+                break;
             case 1:
-                System.out.println("My choice is: " + Moves.values()[choice-1] + "!\n");
+                System.out.println("My choice is: " + Moves.values()[1] + "!\n");
                 break;
             case 2:
-                System.out.println("My choice is: " + Moves.values()[choice-1] + "!\n");
+                System.out.println("My choice is: " + Moves.values()[2] + "!\n");
                 break;
             case 3:
-                System.out.println("My choice is: " + Moves.values()[choice-1] + "!\n");
+                System.out.println("My choice is: " + Moves.values()[3] + "!\n");
                 break;
             case 4:
-                System.out.println("My choice is: " + Moves.values()[choice-1] + "!\n");
-                break;
-            case 5:
-                System.out.println("My choice is: " + Moves.values()[choice-1] + "!\n");
+                System.out.println("My choice is: " + Moves.values()[4] + "!\n");
                 break;
         }
-        move = Moves.values()[choice-1];
+        move = Moves.values()[choice];
         return move;
     }
 
