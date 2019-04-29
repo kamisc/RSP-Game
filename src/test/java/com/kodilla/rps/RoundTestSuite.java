@@ -14,6 +14,8 @@ public class RoundTestSuite {
     private Player player;
     private Computer computer;
 
+    // pobrać punkty z klasy Round - stworzyć gettery
+
     @Before
     public void setUp(){
         player = new Player();

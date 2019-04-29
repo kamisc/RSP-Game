@@ -23,7 +23,7 @@ public class Game {
     }
 
     public void welcome(){
-        System.out.println("Welcome to the Rock-Scissors-Paper Game! Enjoy Yourself!\n\n" +
+        System.out.println("Welcome to the Rock-Scissors-Paper-Lizard-Spock Game! Enjoy Yourself!\n\n" +
                 "This is the game for 2 players. One player is you, the other is me - your computer. \n" +
                 "At the beginning of the game you have to set up your name and choose to how many points you want to play.\n\n" +
                 "REMEMBER: Confirm every choice with the ENTER!\n");
@@ -57,8 +57,6 @@ public class Game {
                 System.out.println("FINAL RESULT: " + player.getPlayerName() + " " + player.getPlayerPoints() + " : " + computer.getComputerPoints() + " Computer");
                 System.out.print("\nAnd the winner is... ");
 
-                // try endgame
-
                 if(player.getPlayerPoints() > computer.getComputerPoints()){
                     System.out.println(player.getPlayerName() + "!!!\n");
                     endGame.endGame();
@@ -85,14 +83,18 @@ public class Game {
     public void setWinPointsNumbers() throws WrongChoice {
         System.out.println("Hello, " + player.getPlayerName() + "! How many points do you want to get to finish the game?");
 
+        int number;
+
         try{
-            int number = Integer.parseInt(sc.nextLine());
-            if(number < 1){
-                throw new WrongChoice();
-            }
+            number = Integer.parseInt(sc.nextLine());
             this.winPointsNumbers = number;
         } catch (NumberFormatException e){
             throw new WrongChoice();
         }
+
+        if(number < 1){
+            throw new WrongChoice();
+        }
+
     }
 }

@@ -16,12 +16,10 @@ public final class EndGame {
                 "End game - press capital X\n" +
                 "New game - press capital N");
 
-        // choice = sc.nextLine();
-
         while(!isEnd()){
             try{
                 choice = sc.nextLine();
-                if(!choice.equals("N") || !choice.equals("Y")){
+                if(!choice.equals("N") && !choice.equals("X")){
                     throw new WrongChoice();
                 }
                 setEnd(true);

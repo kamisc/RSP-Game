@@ -13,7 +13,7 @@ public class ComputerTestSuite {
     public void testComputerMoveRock() throws InterruptedException {
         //Given
         Random mockComputerRock = mock(Random.class);
-        when(mockComputerRock.nextInt()).thenReturn(1);
+        when(mockComputerRock.nextInt(5)).thenReturn(1);
         Computer computerRock = new Computer(mockComputerRock);
 
         //When
@@ -28,7 +28,7 @@ public class ComputerTestSuite {
     public void testComputerMoveScissors() throws InterruptedException {
         //Given
         Random mockComputerScissors = mock(Random.class);
-        when(mockComputerScissors.nextInt()).thenReturn(2);
+        when(mockComputerScissors.nextInt(5)).thenReturn(2);
         Computer computerScissors = new Computer(mockComputerScissors);
 
         //When
@@ -43,7 +43,7 @@ public class ComputerTestSuite {
     public void testComputerMovePaper() throws InterruptedException {
         //Given
         Random mockComputerPaper = mock(Random.class);
-        when(mockComputerPaper.nextInt()).thenReturn(3);
+        when(mockComputerPaper.nextInt(5)).thenReturn(3);
         Computer computerPaper = new Computer(mockComputerPaper);
 
         //When

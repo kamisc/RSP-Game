@@ -7,33 +7,27 @@ public class Player {
     private Scanner sc = new Scanner(System.in);
     private String playerName;
     private int playerPoints;
-    private int choice;
 
     public Moves playerMove() throws WrongChoice {
         System.out.println("Pick your move! 1 - ROCK, 2 - SCISSORS, 3 - PAPER, 4 - LIZARD, 5 - SPOCK");
 
+        int choice;
+
         try{
             choice = Integer.parseInt(sc.nextLine());
-            if(choice < 1 || choice > 5) {
-                throw new WrongChoice();
-            }
         } catch (NumberFormatException e){
+            throw new WrongChoice();
+        }
+
+        if(choice < 1 || choice > 5) {
             throw new WrongChoice();
         }
 
         switch (choice){
             case 1:
-                System.out.println("Your choice is: " + Moves.values()[choice-1] + "!\n");
-                break;
             case 2:
-                System.out.println("Your choice is: " + Moves.values()[choice-1] + "!\n");
-                break;
             case 3:
-                System.out.println("Your choice is: " + Moves.values()[choice-1] + "!\n");
-                break;
             case 4:
-                System.out.println("Your choice is: " + Moves.values()[choice-1] + "!\n");
-                break;
             case 5:
                 System.out.println("Your choice is: " + Moves.values()[choice-1] + "!\n");
                 break;

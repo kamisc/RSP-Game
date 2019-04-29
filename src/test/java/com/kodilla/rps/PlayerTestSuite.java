@@ -17,6 +17,8 @@ public class PlayerTestSuite {
         Assert.assertEquals("Kamil", player.getPlayerName());
     }
 
+    // poprawić na mock Moves i ruch gracza określić
+
     @Test
     public void testPlayerMoveRock() throws WrongChoice {
         //Given

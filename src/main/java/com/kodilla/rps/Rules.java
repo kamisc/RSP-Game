@@ -8,7 +8,7 @@ public final class Rules {
 
     public final void gameRules(){
 
-        System.out.println("If you want to know the rules of the game, press capital Y or press any key if You won't.");
+        System.out.println("If you want to know the rules of the game, press capital Y or press any key if you won't.");
         if(sc.nextLine().equals("Y")){
             System.out.println(
                             "After starting the game You must choose your move on the keyboard:\n" +
@@ -21,7 +21,7 @@ public final class Rules {
                             "X - End of the game\n" +
                             "N - Start new game\n\n" +
                             "Remember: Scissors cuts paper, paper covers rock, rock crushes lizard, lizard poisons Spock, " +
-                                    "Spock smashes scissors, scissors decapitates lizard, lizard eats paper, " +
+                                    "Spock smashes scissors, scissors decapitates\nlizard, lizard eats paper, " +
                                     "paper disproves Spock, Spock vaporizes rock, and as it always has, rock crushes scissors!\n\n" +
                                     "You can watch the rules on the: https://www.youtube.com/watch?v=x5Q6-wMx-K8&t=69s\n\n" +
                             "If you choose the same movement as your opponent then will be draw and no one gets a point.\n\n" +

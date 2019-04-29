@@ -4,165 +4,133 @@ public class Round {
     private int playerPoints;
     private int computerPoints;
 
+    public void messageWhenPlayerWin(Player player, Computer computer){
+        System.out.println(player.getPlayerName() + " = " + player.getMove() + " vs. " + computer.getMove() + " = Computer");
+        System.out.println(player.getPlayerName() + " gets 1 point!\n");
+        System.out.println(player.getPlayerName() + " " + player.getPlayerPoints() + " : " + computer.getComputerPoints() + " Computer\n");
+    }
+
+    public void messageWhenComputerWin(Player player, Computer computer){
+        System.out.println(player.getPlayerName() + " = " + player.getMove() + " vs. " + computer.getMove() + " = Computer");
+        System.out.println("Your computer gets 1 point!\n");
+        System.out.println(player.getPlayerName() + " " + player.getPlayerPoints() + " : " + computer.getComputerPoints() + " Computer\n");
+    }
+
+    public void messageWhenDraw(Player player, Computer computer){
+        System.out.println(player.getPlayerName() + " = " + player.getMove() + " vs. " + computer.getMove() + " = Computer");
+        System.out.println("DRAW! No one gets a point!\n");
+        System.out.println(player.getPlayerName() + " " + player.getPlayerPoints() + " : " + computer.getComputerPoints() + " Computer\n");
+    }
+
     public void round(Moves playerMove, Moves computerMove, Player player, Computer computer) {
         switch (playerMove){
             case ROCK:
                 if(computerMove.equals(Moves.SCISSORS)){
-                    System.out.println(player.getPlayerName() + " = " + player.getMove() + " vs. " + computer.getMove() + " = Computer");
-                    System.out.println(player.getPlayerName() + " gets 1 point!\n");
                     playerPoints++;
                     player.setPlayerPoints(playerPoints);
-                    System.out.println(player.getPlayerName() + " " + player.getPlayerPoints() + " : " + computer.getComputerPoints() + " Computer\n");
+                    messageWhenPlayerWin(player, computer);
                 } else if(computerMove.equals(Moves.LIZARD)){
-                    System.out.println(player.getPlayerName() + " = " + player.getMove() + " vs. " + computer.getMove() + " = Computer");
-                    System.out.println(player.getPlayerName() + " gets 1 point!\n");
                     playerPoints++;
                     player.setPlayerPoints(playerPoints);
-                    System.out.println(player.getPlayerName() + " " + player.getPlayerPoints() + " : " + computer.getComputerPoints() + " Computer\n");
+                    messageWhenPlayerWin(player, computer);
                 } else if(computerMove.equals(Moves.PAPER)){
-                    System.out.println(player.getPlayerName() + " = " + player.getMove() + " vs. " + computer.getMove() + " = Computer");
-                    System.out.println("Your computer gets 1 point!\n");
                     computerPoints++;
                     computer.setComputerPoints(computerPoints);
-                    System.out.println(player.getPlayerName() + " " + player.getPlayerPoints() + " : " + computer.getComputerPoints() + " Computer\n");
+                    messageWhenComputerWin(player, computer);
                 } else if(computerMove.equals(Moves.SPOCK)){
-                    System.out.println(player.getPlayerName() + " = " + player.getMove() + " vs. " + computer.getMove() + " = Computer");
-                    System.out.println("Your computer gets 1 point!\n");
                     computerPoints++;
                     computer.setComputerPoints(computerPoints);
-                    System.out.println(player.getPlayerName() + " " + player.getPlayerPoints() + " : " + computer.getComputerPoints() + " Computer\n");
+                    messageWhenComputerWin(player, computer);
                 } else {
-                    System.out.println(player.getPlayerName() + " = " + player.getMove() + " vs. " + computer.getMove() + " = Computer");
-                    System.out.println("DRAW! No one gets a point!\n");
-                    System.out.println(player.getPlayerName() + " " + player.getPlayerPoints() + " : " + computer.getComputerPoints() + " Computer\n");
+                    messageWhenDraw(player, computer);
                 }
                 break;
 
             case SCISSORS:
                 if(computerMove.equals(Moves.PAPER)){
-                    System.out.println(player.getPlayerName() + " = " + player.getMove() + " vs. " + computer.getMove() + " = Computer");
-                    System.out.println(player.getPlayerName() + " gets 1 point!\n");
                     playerPoints++;
                     player.setPlayerPoints(playerPoints);
-                    System.out.println(player.getPlayerName() + " " + player.getPlayerPoints() + " : " + computer.getComputerPoints() + " Computer\n");
+                    messageWhenPlayerWin(player, computer);
                 } else if(computerMove.equals(Moves.LIZARD)){
-                    System.out.println(player.getPlayerName() + " = " + player.getMove() + " vs. " + computer.getMove() + " = Computer");
-                    System.out.println(player.getPlayerName() + " gets 1 point!\n");
                     playerPoints++;
                     player.setPlayerPoints(playerPoints);
-                    System.out.println(player.getPlayerName() + " " + player.getPlayerPoints() + " : " + computer.getComputerPoints() + " Computer\n");
+                    messageWhenPlayerWin(player, computer);
                 } else if(computerMove.equals(Moves.ROCK)){
-                    System.out.println(player.getPlayerName() + " = " + player.getMove() + " vs. " + computer.getMove() + " = Computer");
-                    System.out.println("Your computer gets 1 point!\n");
                     computerPoints++;
                     computer.setComputerPoints(computerPoints);
-                    System.out.println(player.getPlayerName() + " " + player.getPlayerPoints() + " : " + computer.getComputerPoints() + " Computer\n");
+                    messageWhenComputerWin(player, computer);
                 } else if(computerMove.equals(Moves.SPOCK)){
-                    System.out.println(player.getPlayerName() + " = " + player.getMove() + " vs. " + computer.getMove() + " = Computer");
-                    System.out.println("Your computer gets 1 point!\n");
                     computerPoints++;
                     computer.setComputerPoints(computerPoints);
-                    System.out.println(player.getPlayerName() + " " + player.getPlayerPoints() + " : " + computer.getComputerPoints() + " Computer\n");
+                    messageWhenComputerWin(player, computer);
                 } else {
-                    System.out.println(player.getPlayerName() + " = " + player.getMove() + " vs. " + computer.getMove() + " = Computer");
-                    System.out.println("DRAW! No one gets a point!\n");
-                    System.out.println(player.getPlayerName() + " " + player.getPlayerPoints() + " : " + computer.getComputerPoints() + " Computer\n");
+                    messageWhenDraw(player, computer);
                 }
                 break;
 
             case PAPER:
                 if(computerMove.equals(Moves.ROCK)){
-                    System.out.println(player.getPlayerName() + " = " + player.getMove() + " vs. " + computer.getMove() + " = Computer");
-                    System.out.println(player.getPlayerName() + " gets 1 point!\n");
                     playerPoints++;
                     player.setPlayerPoints(playerPoints);
-                    System.out.println(player.getPlayerName() + " " + player.getPlayerPoints() + " : " + computer.getComputerPoints() + " Computer\n");
+                    messageWhenPlayerWin(player, computer);
                 } else if(computerMove.equals(Moves.SPOCK)){
-                    System.out.println(player.getPlayerName() + " = " + player.getMove() + " vs. " + computer.getMove() + " = Computer");
-                    System.out.println(player.getPlayerName() + " gets 1 point!\n");
                     playerPoints++;
                     player.setPlayerPoints(playerPoints);
-                    System.out.println(player.getPlayerName() + " " + player.getPlayerPoints() + " : " + computer.getComputerPoints() + " Computer\n");
+                    messageWhenPlayerWin(player, computer);
                 } else if(computerMove.equals(Moves.SCISSORS)){
-                    System.out.println(player.getPlayerName() + " = " + player.getMove() + " vs. " + computer.getMove() + " = Computer");
-                    System.out.println("Your computer gets 1 point!\n");
                     computerPoints++;
                     computer.setComputerPoints(computerPoints);
-                    System.out.println(player.getPlayerName() + " " + player.getPlayerPoints() + " : " + computer.getComputerPoints() + " Computer\n");
+                    messageWhenComputerWin(player, computer);
                 } else if(computerMove.equals(Moves.LIZARD)){
-                    System.out.println(player.getPlayerName() + " = " + player.getMove() + " vs. " + computer.getMove() + " = Computer");
-                    System.out.println("Your computer gets 1 point!\n");
                     computerPoints++;
                     computer.setComputerPoints(computerPoints);
-                    System.out.println(player.getPlayerName() + " " + player.getPlayerPoints() + " : " + computer.getComputerPoints() + " Computer\n");
+                    messageWhenComputerWin(player, computer);
                 } else {
-                    System.out.println(player.getPlayerName() + " = " + player.getMove() + " vs. " + computer.getMove() + " = Computer");
-                    System.out.println("DRAW! No one gets a point!\n");
-                    System.out.println(player.getPlayerName() + " " + player.getPlayerPoints() + " : " + computer.getComputerPoints() + " Computer\n");
+                    messageWhenDraw(player, computer);
                 }
                 break;
 
             case LIZARD:
                 if(computerMove.equals(Moves.SPOCK)){
-                    System.out.println(player.getPlayerName() + " = " + player.getMove() + " vs. " + computer.getMove() + " = Computer");
-                    System.out.println(player.getPlayerName() + " gets 1 point!\n");
                     playerPoints++;
                     player.setPlayerPoints(playerPoints);
-                    System.out.println(player.getPlayerName() + " " + player.getPlayerPoints() + " : " + computer.getComputerPoints() + " Computer\n");
+                    messageWhenPlayerWin(player, computer);
                 } else if(computerMove.equals(Moves.PAPER)){
-                    System.out.println(player.getPlayerName() + " = " + player.getMove() + " vs. " + computer.getMove() + " = Computer");
-                    System.out.println(player.getPlayerName() + " gets 1 point!\n");
                     playerPoints++;
                     player.setPlayerPoints(playerPoints);
-                    System.out.println(player.getPlayerName() + " " + player.getPlayerPoints() + " : " + computer.getComputerPoints() + " Computer\n");
+                    messageWhenPlayerWin(player, computer);
                 } else if(computerMove.equals(Moves.SCISSORS)){
-                    System.out.println(player.getPlayerName() + " = " + player.getMove() + " vs. " + computer.getMove() + " = Computer");
-                    System.out.println("Your computer gets 1 point!\n");
                     computerPoints++;
                     computer.setComputerPoints(computerPoints);
-                    System.out.println(player.getPlayerName() + " " + player.getPlayerPoints() + " : " + computer.getComputerPoints() + " Computer\n");
+                    messageWhenComputerWin(player, computer);
                 } else if(computerMove.equals(Moves.ROCK)){
-                    System.out.println(player.getPlayerName() + " = " + player.getMove() + " vs. " + computer.getMove() + " = Computer");
-                    System.out.println("Your computer gets 1 point!\n");
                     computerPoints++;
                     computer.setComputerPoints(computerPoints);
-                    System.out.println(player.getPlayerName() + " " + player.getPlayerPoints() + " : " + computer.getComputerPoints() + " Computer\n");
+                    messageWhenComputerWin(player, computer);
                 } else {
-                    System.out.println(player.getPlayerName() + " = " + player.getMove() + " vs. " + computer.getMove() + " = Computer");
-                    System.out.println("DRAW! No one gets a point!\n");
-                    System.out.println(player.getPlayerName() + " " + player.getPlayerPoints() + " : " + computer.getComputerPoints() + " Computer\n");
+                    messageWhenDraw(player, computer);
                 }
                 break;
 
             case SPOCK:
                 if(computerMove.equals(Moves.SCISSORS)){
-                    System.out.println(player.getPlayerName() + " = " + player.getMove() + " vs. " + computer.getMove() + " = Computer");
-                    System.out.println(player.getPlayerName() + " gets 1 point!\n");
                     playerPoints++;
                     player.setPlayerPoints(playerPoints);
-                    System.out.println(player.getPlayerName() + " " + player.getPlayerPoints() + " : " + computer.getComputerPoints() + " Computer\n");
+                    messageWhenPlayerWin(player, computer);
                 } else if(computerMove.equals(Moves.ROCK)){
-                    System.out.println(player.getPlayerName() + " = " + player.getMove() + " vs. " + computer.getMove() + " = Computer");
-                    System.out.println(player.getPlayerName() + " gets 1 point!\n");
                     playerPoints++;
                     player.setPlayerPoints(playerPoints);
-                    System.out.println(player.getPlayerName() + " " + player.getPlayerPoints() + " : " + computer.getComputerPoints() + " Computer\n");
+                    messageWhenPlayerWin(player, computer);
                 } else if(computerMove.equals(Moves.LIZARD)){
-                    System.out.println(player.getPlayerName() + " = " + player.getMove() + " vs. " + computer.getMove() + " = Computer");
-                    System.out.println("Your computer gets 1 point!\n");
                     computerPoints++;
                     computer.setComputerPoints(computerPoints);
-                    System.out.println(player.getPlayerName() + " " + player.getPlayerPoints() + " : " + computer.getComputerPoints() + " Computer\n");
+                    messageWhenComputerWin(player, computer);
                 } else if(computerMove.equals(Moves.PAPER)){
-                    System.out.println(player.getPlayerName() + " = " + player.getMove() + " vs. " + computer.getMove() + " = Computer");
-                    System.out.println("Your computer gets 1 point!\n");
                     computerPoints++;
                     computer.setComputerPoints(computerPoints);
-                    System.out.println(player.getPlayerName() + " " + player.getPlayerPoints() + " : " + computer.getComputerPoints() + " Computer\n");
+                    messageWhenComputerWin(player, computer);
                 } else {
-                    System.out.println(player.getPlayerName() + " = " + player.getMove() + " vs. " + computer.getMove() + " = Computer");
-                    System.out.println("DRAW! No one gets a point!\n");
-                    System.out.println(player.getPlayerName() + " " + player.getPlayerPoints() + " : " + computer.getComputerPoints() + " Computer\n");
+                    messageWhenDraw(player, computer);
                 }
                 break;
         }
