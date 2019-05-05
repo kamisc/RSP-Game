@@ -1,23 +1,12 @@
 package com.kodilla.rps;
 
-import java.util.Scanner;
-
 public class Player {
     private Moves move;
-    private Scanner sc = new Scanner(System.in);
     private String playerName;
     private int playerPoints;
+    private int choice;
 
-    public Moves playerMove() throws WrongChoice {
-        System.out.println("Pick your move! 1 - ROCK, 2 - SCISSORS, 3 - PAPER, 4 - LIZARD, 5 - SPOCK");
-
-        int choice;
-
-        try{
-            choice = Integer.parseInt(sc.nextLine());
-        } catch (NumberFormatException e){
-            throw new WrongChoice();
-        }
+    public Moves playerMove(int choice) throws WrongChoice {
 
         if(choice < 1 || choice > 5) {
             throw new WrongChoice();
@@ -47,5 +36,13 @@ public class Player {
 
     public Moves getMove() {
         return move;
+    }
+
+    public int getChoice() {
+        return choice;
+    }
+
+    public void setChoice(int choice) {
+        this.choice = choice;
     }
 }

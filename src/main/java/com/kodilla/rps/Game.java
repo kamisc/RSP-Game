@@ -46,9 +46,13 @@ public class Game {
             count++;
 
             try{
-                oneRound.round(player.playerMove(), computer.computerMove(), player, computer);
+                System.out.println("Pick your move! 1 - ROCK, 2 - SCISSORS, 3 - PAPER, 4 - LIZARD, 5 - SPOCK");
+                player.setChoice(Integer.parseInt(sc.nextLine()));
+                oneRound.round(player.playerMove(player.getChoice()), computer.computerMove(), player, computer);
             } catch (WrongChoice e) {
                 System.out.println(e.getMessage() + " You must pick 1, 2, 3, 4 or 5!\n");
+            }catch (NumberFormatException e) {
+                System.out.println("Wrong Choice! You must pick 1, 2, 3, 4 or 5!\n");
             }
 
             if(player.getPlayerPoints() == getWinPointsNumbers() || computer.getComputerPoints() == getWinPointsNumbers()){
