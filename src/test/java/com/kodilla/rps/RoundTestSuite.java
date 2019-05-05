@@ -14,8 +14,6 @@ public class RoundTestSuite {
     private Player player;
     private Computer computer;
 
-    // pobrać punkty z klasy Round - stworzyć gettery
-
     @Before
     public void setUp(){
         player = new Player();
@@ -23,7 +21,7 @@ public class RoundTestSuite {
     }
 
     @Test
-    public void testRound(){
+    public void testRoundPlayerWin(){
         player = mock(Player.class);
         computer = mock(Computer.class);
 
@@ -37,5 +35,22 @@ public class RoundTestSuite {
         Assert.assertEquals(1, round.getPlayerPoints());
         Assert.assertEquals(0, round.getComputerPoints());
     }
+
+    @Test
+    public void testRoundComputerWin(){
+        player = mock(Player.class);
+        computer = mock(Computer.class);
+
+        when(player.getMove()).thenReturn(Moves.SPOCK);
+        when(computer.getMove()).thenReturn(Moves.PAPER);
+        when(player.getPlayerName()).thenReturn("Kamil");
+
+        Round round = new Round();
+        round.round(player.getMove(), computer.getMove(), player, computer);
+
+        Assert.assertEquals(0, round.getPlayerPoints());
+        Assert.assertEquals(1, round.getComputerPoints());
+    }
+
 
 }
