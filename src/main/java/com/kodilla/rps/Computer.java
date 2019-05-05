@@ -13,14 +13,22 @@ public class Computer {
         this.random = random;
     }
 
-    public Moves computerMove() throws InterruptedException {
+    public int getChoice() {
+        return choice;
+    }
+
+    public void setChoice() {
+        int choice = random.nextInt(Moves.values().length) ;
+        this.choice = choice;
+    }
+
+    public Moves computerMove(int choice) throws InterruptedException {
         System.out.println("It's time for me to choose my move!\nGive me 3 seconds... Hmmmm...\n");
         TimeUnit.SECONDS.sleep(3);
-        choice = random.nextInt(Moves.values().length)+1;
 
-        System.out.println("My choice is: " + Moves.values()[choice-1] + "!\n");
+        System.out.println("My choice is: " + Moves.values()[choice] + "!\n");
 
-        move = Moves.values()[choice-1];
+        move = Moves.values()[choice];
         return move;
     }
 
