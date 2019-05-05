@@ -135,4 +135,12 @@ public class Round {
                 break;
         }
     }
+
+    public int getPlayerPoints() {
+        return playerPoints;
+    }
+
+    public int getComputerPoints() {
+        return computerPoints;
+    }
 }

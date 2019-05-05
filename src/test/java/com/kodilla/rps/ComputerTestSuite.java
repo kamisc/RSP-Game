@@ -13,7 +13,7 @@ public class ComputerTestSuite {
     public void testComputerMoveRock() throws InterruptedException {
         //Given
         Random mockComputerRock = mock(Random.class);
-        when(mockComputerRock.nextInt(5)).thenReturn(1);
+        when(mockComputerRock.nextInt(Moves.values().length)).thenReturn(1);
         Computer computerRock = new Computer(mockComputerRock);
 
         //When

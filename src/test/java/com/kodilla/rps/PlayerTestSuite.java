@@ -17,17 +17,17 @@ public class PlayerTestSuite {
         Assert.assertEquals("Kamil", player.getPlayerName());
     }
 
-    // poprawić na mock Moves i ruch gracza określić
+    // poprawić na mock Moves i ruch gracza określić -> zrobić setMoves?
 
     @Test
     public void testPlayerMoveRock() throws WrongChoice {
         //Given
         Player mockPlayerRock = mock(Player.class);
-
         when(mockPlayerRock.playerMove()).thenReturn(Moves.ROCK);
+        Player player = new Player();
 
         //When
-        Moves rock = mockPlayerRock.playerMove();
+        Moves rock = player.getMove();
 
         //Then
         Assert.assertEquals(Moves.ROCK, rock);

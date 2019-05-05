@@ -23,15 +23,8 @@ public class Player {
             throw new WrongChoice();
         }
 
-        switch (choice){
-            case 1:
-            case 2:
-            case 3:
-            case 4:
-            case 5:
-                System.out.println("Your choice is: " + Moves.values()[choice-1] + "!\n");
-                break;
-        }
+        System.out.println("Your choice is: " + Moves.values()[choice-1] + "!\n");
+
         move = Moves.values()[choice-1];
         return move;
     }

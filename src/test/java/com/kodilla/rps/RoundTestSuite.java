@@ -34,8 +34,8 @@ public class RoundTestSuite {
         Round round = new Round();
         round.round(player.getMove(), computer.getMove(), player, computer);
 
-        Assert.assertEquals(1, player.getPlayerPoints());
-        Assert.assertEquals(0, computer.getComputerPoints());
+        Assert.assertEquals(1, round.getPlayerPoints());
+        Assert.assertEquals(0, round.getComputerPoints());
     }
 
 }
