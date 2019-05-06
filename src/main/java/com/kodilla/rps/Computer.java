@@ -13,18 +13,10 @@ public class Computer {
         this.random = random;
     }
 
-    public int getChoice() {
-        return choice;
-    }
-
-    public void setChoice() {
-        int choice = random.nextInt(Moves.values().length) ;
-        this.choice = choice;
-    }
-
-    public Moves computerMove(int choice) throws InterruptedException {
+    public Moves computerMove() throws InterruptedException {
         System.out.println("It's time for me to choose my move!\nGive me 3 seconds... Hmmmm...\n");
         TimeUnit.SECONDS.sleep(3);
+        choice = random.nextInt(Moves.values().length) ;
 
         System.out.println("My choice is: " + Moves.values()[choice] + "!\n");
 
@@ -43,4 +35,5 @@ public class Computer {
     public Moves getMove() {
         return move;
     }
+
 }

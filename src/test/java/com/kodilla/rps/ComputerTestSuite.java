@@ -27,10 +27,10 @@ public class ComputerTestSuite {
         Computer computer = new Computer(mockComputerRock);
 
         //When
-        Moves rock = computer.computerMove(computer.getChoice());
+        Moves rock = computer.computerMove();
 
         //Then
-        Assert.assertEquals(Moves.ROCK , rock);
+        Assert.assertEquals(Moves.ROCK, rock);
     }
 
     @Test
@@ -41,7 +41,7 @@ public class ComputerTestSuite {
         Computer computer = new Computer(mockComputerScissors);
 
         //When
-        Moves scissors = computer.computerMove(computer.getChoice());
+        Moves scissors = computer.computerMove();
 
         //Then
         Assert.assertEquals(Moves.SCISSORS, scissors);
@@ -55,11 +55,37 @@ public class ComputerTestSuite {
         Computer computer = new Computer(mockComputerPaper);
 
         //When
-        Moves paper = computer.computerMove(computer.getChoice());
+        Moves paper = computer.computerMove();
 
         //Then
         Assert.assertEquals(Moves.PAPER, paper);
     }
 
+    @Test
+    public void testComputerMoveLizard() throws InterruptedException {
+        //Given
+        Random mockComputerLizard = mock(Random.class);
+        when(mockComputerLizard.nextInt(Moves.values().length)).thenReturn(3);
+        Computer computer = new Computer(mockComputerLizard);
 
+        //When
+        Moves lizard = computer.computerMove();
+
+        //Then
+        Assert.assertEquals(Moves.LIZARD, lizard);
+    }
+
+    @Test
+    public void testComputerMoveSpock() throws InterruptedException {
+        //Given
+        Random mockComputerSpock = mock(Random.class);
+        when(mockComputerSpock.nextInt(Moves.values().length)).thenReturn(4);
+        Computer computer = new Computer(mockComputerSpock);
+
+        //When
+        Moves spock = computer.computerMove();
+
+        //Then
+        Assert.assertEquals(Moves.SPOCK, spock);
+    }
 }

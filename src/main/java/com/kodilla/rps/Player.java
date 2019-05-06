@@ -7,7 +7,6 @@ public class Player {
     private int choice;
 
     public Moves playerMove(int choice) throws WrongChoice {
-
         if(choice < 1 || choice > 5) {
             throw new WrongChoice();
         }
