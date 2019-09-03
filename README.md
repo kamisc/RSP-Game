@@ -1,6 +1,6 @@
 # Rock Scissors Paper Lizard Spock Console Game
 
-[![Build Status](https://travis-ci.org/kamisc/Rock-Scissor-Paper-Lizard-Spock-Game.svg?branch=master)](https://travis-ci.org/kamisc/Rock-Scissor-Paper-Lizard-Spock-Game)
+[![Build Status](https://travis-ci.org/kamisc/Rock-Scissor-Paper-Lizard-Spock-Game.svg?branch=master)](https://travis-ci.org/kamisc/Rock-Scissors-Paper-Lizard-Spock-Game)
 
 Rock Scissors Paper Lizard Spock game created by using Java 8. When you start game you need to set your name and the number of points to which you will play. Then you can check rules of the game.
 When all is clear game will be started. You play against computer using keyboard. Remember your computer is a smart guy. :smile:
