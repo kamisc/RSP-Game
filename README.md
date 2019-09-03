@@ -7,11 +7,11 @@ When all is clear game will be started. You play against computer using keyboard
 
 **_Author: Kamil Seweryn_**
 
-![rspls](https://raw.githubusercontent.com/kamisc/Rock-Scissor-Paper-Lizard-Spock-Game/master/src/main/resources/rspls.jpg)
+![rspls](https://raw.githubusercontent.com/kamisc/Rock-Scissors-Paper-Lizard-Spock-Game/master/src/main/resources/rspls.jpg)
 
 **_Instalation_**
 
 1. Download latest version from releases: https://github.com/kamisc/Rock-Scissor-Paper-Lizard-Spock-Game/releases
 2. Run command line and run game by command: java -jar rspls.jar
 
-![rules](https://raw.githubusercontent.com/kamisc/Rock-Scissor-Paper-Lizard-Spock-Game/master/src/main/resources/rules.jpg)
+![rules](https://raw.githubusercontent.com/kamisc/Rock-Scissors-Paper-Lizard-Spock-Game/master/src/main/resources/rules.jpg)
